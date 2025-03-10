@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Backend Simulado com JavaScript</title>
+</head>
+<body>
+    <h1>Backend Simulado com JavaScript</h1>
+    <p>Clique no botão para ver os "usuários" do banco simulado.</p>
+    <button onclick="fetchUsers()">Mostrar Usuários</button>
+    <ul id="userList"></ul>
+
+    <script>
+        // Banco de dados simulado
+        const users = [
+            { id: 1, name: 'Renato' },
+            { id: 2, name: 'Maria' },
+            { id: 3, name: 'João' }
+        ];
+
+        // Função para simular uma chamada de API
+        function fetchUsers() {
+            const userList = document.getElementById('userList');
+            userList.innerHTML = '';
+            users.forEach(user => {
+                const li = document.createElement('li');
+                li.textContent = `ID: ${user.id}, Nome: ${user.name}`;
+                userList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
